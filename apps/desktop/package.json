@@ -1,0 +1,12 @@
+{
+  "name": "@registry/desktop",
+  "version": "0.0.1",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^29.1.0"
+  }
+}

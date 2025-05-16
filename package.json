@@ -1,0 +1,37 @@
+{
+  "name": "zbor-registar",
+  "version": "0.0.1",
+  "description": "Aplikacija za podsticanje transparentnosti",
+  "keywords": [
+    "zbor",
+    "registar",
+    "transparentnost",
+    "assembly",
+    "registry",
+    "transparency"
+  ],
+  "homepage": "https://github.com/macmilan/zbor-registar#readme",
+  "bugs": {
+    "url": "https://github.com/macmilan/zbor-registar/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macmilan/zbor-registar.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Marko Milanovic",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter @registry/backend dev\" \"pnpm --filter @registry/frontend start\"",
+    "lint": "eslint .",
+    "build": "pnpm --filter @registry/frontend build && pnpm --filter @registry/backend build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "eslint": "^8.56.0",
+    "husky": "^9.0.0"
+  }
+}
