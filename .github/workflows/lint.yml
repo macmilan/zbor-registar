@@ -1,0 +1,40 @@
+name: Lint i provera formata
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - name: 📥 Kloniraj repozitorijum
+        uses: actions/checkout@v3
+
+      - name: 🔧 Postavi Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 📦 Instaliraj dependencije (frontend)
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: 🧹 Pokreni ESLint
+        working-directory: ./frontend
+        run: npx eslint . --ext .js,.ts,.tsx,.jsx
+
+      - name: 💅 Pokreni Prettier proveru
+        working-directory: ./frontend
+        run: npx prettier . --check
+
+      # Možeš dodati još backend koraka ovde npr.:
+      # - name: 🔍 PHPStan ili Laravel Pint (ako koristiš Laravel)
+      # - name: 🐍 Pylint ili Black (ako koristiš Python)
