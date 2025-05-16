@@ -26,7 +26,7 @@ Svaka kategorija ima:
 - API: REST ili GraphQL
 - Pretraga: Full-text u bazi (npr. PostgreSQL `tsvector`)
 
-## 🗂️ Struktura projekta
+## 🗂️ Struktura projekta (predlog zasnovan na Node tehnologiji)
 
 ```
 unified-registry/
@@ -42,7 +42,7 @@ unified-registry/
 └── README.md
 ```
 
-## ⚙️ Pokretanje aplikacije (Hello World)
+## ⚙️ Pokretanje aplikacije (Hello World) (primer aplikacije koja radi)
 
 ### 1. Kloniraj repozitorijum
 
