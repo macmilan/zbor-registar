@@ -1,9 +1,0 @@
-{
-  "name": "zbor-registar",
-
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  }
-}
